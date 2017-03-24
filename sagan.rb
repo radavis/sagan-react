@@ -10,3 +10,7 @@ set :database_file, "./config/database.yml"
 get "/api/v1/categories" do
   Category.all.to_json
 end
+
+get "/api/v1/links" do
+  Links.all.to_json
+end

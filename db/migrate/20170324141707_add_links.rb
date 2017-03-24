@@ -4,7 +4,7 @@ class AddLinks < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :url, null: false
       t.string :description
-      t.timestamps null:false
+      t.timestamps null: false
     end
   end
 end
