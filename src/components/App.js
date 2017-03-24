@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Categories from './Categories'
+import Links from './Links'
 import '../styles/App.css'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      categories: []
+      categories: [],
+      selectedCategoryId: null
     }
 
     this.onCategoryClick = this.onCategoryClick.bind(this)
@@ -21,24 +23,17 @@ class App extends Component {
   }
 
   onCategoryClick(event) {
-    console.log(event.target)
+    this.setState({ selectedCategoryId: event.target.dataset.id })
+    console.log(`selectedCategoryId: ${event.target.dataset.id}`)
   }
 
   render() {
-    let result
-    if (this.state.categories.length > 0) {
-      result = (
+    return (
+      <div className="App">
         <Categories
           categories={this.state.categories}
           onClickHandler={this.onCategoryClick} />
-      )
-    } else {
-      result = "Loading..."
-    }
-
-    return (
-      <div className="App">
-        {result}
+        <Links categoryId={this.state.selectedCategoryId} />
       </div>
     )
   }

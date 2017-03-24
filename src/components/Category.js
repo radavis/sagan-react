@@ -1,7 +1,9 @@
 import React from 'react'
 
-let Category = ({name, onClickHandler}) => (
-  <div onClick={onClickHandler}>
+let Category = ({categoryId, name, onClickHandler}) => (
+  <div
+    onClick={onClickHandler}
+    data-id={categoryId}>
     {name}
   </div>
 )
