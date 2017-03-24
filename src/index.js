@@ -1,9 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import App from './components/App'
 import './styles/index.css'
 
-ReactDOM.render(
-  <App />,
+// pass the root reducer to the createStore() function
+// import rootReducer from './reducers'
+// let store = createStore(todoApp)
+
+render(
+  <Provider>
+    <App />
+  </Provider>,
   document.getElementById('root')
 )
