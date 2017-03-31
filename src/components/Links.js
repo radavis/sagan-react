@@ -15,7 +15,6 @@ class Links extends Component {
     fetch(`/api/v1/categories/${this.state.categoryId}/links`)
     .then((response) => response.json())
     .then((json) => {
-      console.log(json)
       this.setState({ links: json })
     })
   }
